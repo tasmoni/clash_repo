@@ -1,9 +1,9 @@
 #
 #-------------------------------------------------------------#
 #  创建者：https://v2rayse.com
-#  创建时间：2022-12-16 12:09:25
+#  创建时间：2022-12-16 12:13:33
 #  模版：v2rayse默认模版
-#  节点数量：21
+#  节点数量：18
 #-------------------------------------------------------------#
 #
 port: 7890
@@ -20,8 +20,6 @@ proxies:
   - {"type":"vmess","name":"Rafeie","http-opts":{"path":["/ws"]},"server":"fl.epix.site","port":"2083","uuid":"5f1deda0-cc89-45bb-b97e-68bc853e1f55","alterId":"10","cipher":"auto","network":"http"}
   - {"type":"vmess","name":"t.me/thesubnet","ws-opts":{"path":"/"},"server":"internet.thesubnet.cf","port":"80","uuid":"26f26f24-77b7-4bcf-da1c-d1539c78dcce","alterId":"0","cipher":"auto","network":"ws"}
   - {"type":"trojan","name":"Trojan","server":"fl.epix.site","port":4443,"password":"gVI1gTDV60","udp":true,"skip-cert-verify":true}
-  - {"type":"vless","name":"Vless::kcp","server":"fl.epix.site","port":19314,"uuid":"a256051e-a0bf-40e0-df05-dbbb84c3028e","skip-cert-verify":true}
-  - {"type":"vless","name":"Vless::ws+tls","server":"freedom.epix.site","port":2096,"uuid":"156ebd36-d4e1-4b8e-e103-f7d9e0c1b869","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"freedom.epix.site","ws-opts":{"path":"/","headers":{"host":"freedom.epix.site"}}}
   - {"type":"vmess","name":"Vmess::tcp","server":"fl.epix.site","port":"16479","uuid":"bd01a4c7-8d48-4714-d403-237aad3a751d","alterId":"1","cipher":"auto","network":"tcp"}
   - {"type":"vmess","name":"Vmess::tcp+http-masq","http-opts":{"path":["/"]},"server":"fl.epix.site","port":"20760","uuid":"e861f016-5cb4-4f9e-912b-1e67760ac33a","alterId":"0","cipher":"auto","network":"http"}
   - {"type":"vmess","name":"Vmess::tls+ws","ws-opts":{"path":"/prime","headers":{"host":"freedom.epix.site"}},"server":"freedom.epix.site","port":"8443","uuid":"68e6b5d6-6cb3-4a31-fe1c-bcb450f96b07","alterId":"11","cipher":"auto","network":"ws","tls":true}
@@ -32,7 +30,6 @@ proxies:
   - {"type":"vmess","name":"Vmess::ws+gcdn#2","ws-opts":{"path":"/40185"},"server":"cdn.schwifty.cf","port":"80","uuid":"1886d25b-bc72-48ac-8e4a-d9df1e61974e","alterId":"10","cipher":"auto","network":"ws"}
   - {"type":"vmess","name":"Vmess::ws+gcdn+tls#2","ws-opts":{"path":"/8686","headers":{"host":"get.schwifty.cf"}},"server":"get.schwifty.cf","port":"443","uuid":"fdd5c6dc-6d19-47ee-e91d-d28ae9e4cf43","alterId":"0","cipher":"auto","network":"ws","tls":true}
   - {"type":"vmess","name":"Vmess::ws+tls+gcdn#1","ws-opts":{"path":"/24281","headers":{"host":"subnet.epix.site"}},"server":"d.gcdn.co","port":"443","uuid":"2aedb8a1-b600-42a0-8149-a3186ee8f9e7","alterId":"0","cipher":"auto","network":"ws","tls":true}
-  - {"type":"vless","name":"xtls-rprx-vision","server":"fl.epix.site","port":2052,"uuid":"9234e9f4-b0a6-56b9-9665-37377835d63e","skip-cert-verify":true,"network":"tcp","flow":"xtls-rprx-vision","tls":true,"udp":true}
   - {"type":"vmess","name":"drak","ws-opts":{"path":"/"},"server":"cdn.epix.ml","port":"8080","uuid":"fe47a8cb-8b76-4985-ab5a-651124c74eb3","alterId":"0","cipher":"auto","network":"ws"}
 proxy-groups:
   - name: 🚀 节点选择
@@ -47,8 +44,6 @@ proxy-groups:
       - Rafeie
       - t.me/thesubnet
       - Trojan
-      - Vless::kcp
-      - Vless::ws+tls
       - Vmess::tcp
       - Vmess::tcp+http-masq
       - Vmess::tls+ws
@@ -59,7 +54,6 @@ proxy-groups:
       - Vmess::ws+gcdn#2
       - Vmess::ws+gcdn+tls#2
       - Vmess::ws+tls+gcdn#1
-      - xtls-rprx-vision
       - drak
   - name: ♻️ 自动选择
     type: url-test
@@ -74,8 +68,6 @@ proxy-groups:
       - Rafeie
       - t.me/thesubnet
       - Trojan
-      - Vless::kcp
-      - Vless::ws+tls
       - Vmess::tcp
       - Vmess::tcp+http-masq
       - Vmess::tls+ws
@@ -86,7 +78,6 @@ proxy-groups:
       - Vmess::ws+gcdn#2
       - Vmess::ws+gcdn+tls#2
       - Vmess::ws+tls+gcdn#1
-      - xtls-rprx-vision
       - drak
   - name: 🌍 国外媒体
     type: select
@@ -101,8 +92,6 @@ proxy-groups:
       - Rafeie
       - t.me/thesubnet
       - Trojan
-      - Vless::kcp
-      - Vless::ws+tls
       - Vmess::tcp
       - Vmess::tcp+http-masq
       - Vmess::tls+ws
@@ -113,7 +102,6 @@ proxy-groups:
       - Vmess::ws+gcdn#2
       - Vmess::ws+gcdn+tls#2
       - Vmess::ws+tls+gcdn#1
-      - xtls-rprx-vision
       - drak
   - name: 📲 电报信息
     type: select
@@ -127,8 +115,6 @@ proxy-groups:
       - Rafeie
       - t.me/thesubnet
       - Trojan
-      - Vless::kcp
-      - Vless::ws+tls
       - Vmess::tcp
       - Vmess::tcp+http-masq
       - Vmess::tls+ws
@@ -139,7 +125,6 @@ proxy-groups:
       - Vmess::ws+gcdn#2
       - Vmess::ws+gcdn+tls#2
       - Vmess::ws+tls+gcdn#1
-      - xtls-rprx-vision
       - drak
   - name: Ⓜ️ 微软服务
     type: select
@@ -153,8 +138,6 @@ proxy-groups:
       - Rafeie
       - t.me/thesubnet
       - Trojan
-      - Vless::kcp
-      - Vless::ws+tls
       - Vmess::tcp
       - Vmess::tcp+http-masq
       - Vmess::tls+ws
@@ -165,7 +148,6 @@ proxy-groups:
       - Vmess::ws+gcdn#2
       - Vmess::ws+gcdn+tls#2
       - Vmess::ws+tls+gcdn#1
-      - xtls-rprx-vision
       - drak
   - name: 🍎 苹果服务
     type: select
@@ -179,8 +161,6 @@ proxy-groups:
       - Rafeie
       - t.me/thesubnet
       - Trojan
-      - Vless::kcp
-      - Vless::ws+tls
       - Vmess::tcp
       - Vmess::tcp+http-masq
       - Vmess::tls+ws
@@ -191,7 +171,6 @@ proxy-groups:
       - Vmess::ws+gcdn#2
       - Vmess::ws+gcdn+tls#2
       - Vmess::ws+tls+gcdn#1
-      - xtls-rprx-vision
       - drak
   - name: 🎯 全球直连
     type: select
@@ -222,8 +201,6 @@ proxy-groups:
       - Rafeie
       - t.me/thesubnet
       - Trojan
-      - Vless::kcp
-      - Vless::ws+tls
       - Vmess::tcp
       - Vmess::tcp+http-masq
       - Vmess::tls+ws
@@ -234,7 +211,6 @@ proxy-groups:
       - Vmess::ws+gcdn#2
       - Vmess::ws+gcdn+tls#2
       - Vmess::ws+tls+gcdn#1
-      - xtls-rprx-vision
       - drak
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
