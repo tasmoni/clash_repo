@@ -26,11 +26,11 @@ proxy-groups:
       - ♻️ 自动选择
       - DIRECT
       - Vmess::ws+tls
-      - Vmess::ws+gcdn#1
+      - Vmess::ws+gcdn
       - Vmess::tcp+http-masq
       - trojan
       - Vmess::ws+cdn
-      - Vmess::ws+tls+gcdn#1
+      - Vmess::ws+tls+gcdn
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -38,11 +38,11 @@ proxy-groups:
     tolerance: 50
     proxies:
       - Vmess::ws+tls
-      - Vmess::ws+gcdn#1
+      - Vmess::ws+gcdn
       - Vmess::tcp+http-masq
       - trojan
       - Vmess::ws+cdn
-      - Vmess::ws+tls+gcdn#1
+      - Vmess::ws+tls+gcdn
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -50,44 +50,44 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - Vmess::ws+tls
-      - Vmess::ws+gcdn#1
+      - Vmess::ws+gcdn
       - Vmess::tcp+http-masq
       - trojan
       - Vmess::ws+cdn
-      - Vmess::ws+tls+gcdn#1
+      - Vmess::ws+tls+gcdn
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - Vmess::ws+tls
-      - Vmess::ws+gcdn#1
+      - Vmess::ws+gcdn
       - Vmess::tcp+http-masq
       - trojan
       - Vmess::ws+cdn
-      - Vmess::ws+tls+gcdn#1
+      - Vmess::ws+tls+gcdn
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
       - Vmess::ws+tls
-      - Vmess::ws+gcdn#1
+      - Vmess::ws+gcdn
       - Vmess::tcp+http-masq
       - trojan
       - Vmess::ws+cdn
-      - Vmess::ws+tls+gcdn#1
+      - Vmess::ws+tls+gcdn
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - Vmess::ws+tls
-      - Vmess::ws+gcdn#1
+      - Vmess::ws+gcdn
       - Vmess::tcp+http-masq
       - trojan
       - Vmess::ws+cdn
-      - Vmess::ws+tls+gcdn#1
+      - Vmess::ws+tls+gcdn
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -111,11 +111,11 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - Vmess::ws+tls
-      - Vmess::ws+gcdn#1
+      - Vmess::ws+gcdn
       - Vmess::tcp+http-masq
       - trojan
       - Vmess::ws+cdn
-      - Vmess::ws+tls+gcdn#1
+      - Vmess::ws+tls+gcdn
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
