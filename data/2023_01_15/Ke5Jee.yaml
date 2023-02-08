@@ -19,6 +19,8 @@ proxies:
   - {"type":"trojan","name":"trojan","server":"fl.epix.site","port":4443,"password":"gVI1gTDV60","udp":true,"skip-cert-verify":true,"network":"tcp"}
   - {"type":"vmess","name":"Vmess::ws+cdn","ws-opts":{"path":"/","headers":{"host":"cdn.epix.site"}},"server":"cdn.epix.site","port":"80","uuid":"08b05311-d7e8-4343-fcc5-e11914ce4495","alterId":"66","cipher":"auto","network":"ws"}
   - {"type":"vmess","name":"Vmess::ws+tls+gcdn","ws-opts":{"path":"/24281","headers":{"host":"subnet.epix.site"}},"server":"gcdn.1.epix.site","port":"443","uuid":"2aedb8a1-b600-42a0-8149-a3186ee8f9e7","alterId":"0","cipher":"auto","network":"ws","tls":true}
+  - {"name":"Vmess::doprax+cfworker","type":"vmess","server":"cf.epix.ml","port":443,"cipher":"auto","uuid":"8a11784e-8c4f-495a-ab6d-79e29f6ce5d6","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"lb.schwifty.cf","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"lb.schwifty.cf"}}}
+  - {"name":"Vmess::doprax+cfcdn","type":"vmess","server":"cf.epix.ml","port":443,"cipher":"auto","uuid":"8a11784e-8c4f-495a-ab6d-79e29f6ce5d6","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"doprax.epix.ml","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"doprax.epix.ml"}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -31,6 +33,8 @@ proxy-groups:
       - trojan
       - Vmess::ws+cdn
       - Vmess::ws+tls+gcdn
+      - Vmess::doprax+cfcdn
+      - Vmess::doprax+cfworker
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -43,6 +47,8 @@ proxy-groups:
       - trojan
       - Vmess::ws+cdn
       - Vmess::ws+tls+gcdn
+      - Vmess::doprax+cfcdn
+      - Vmess::doprax+cfworker
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -55,6 +61,8 @@ proxy-groups:
       - trojan
       - Vmess::ws+cdn
       - Vmess::ws+tls+gcdn
+      - Vmess::doprax+cfcdn
+      - Vmess::doprax+cfworker
   - name: 📲 电报信息
     type: select
     proxies:
@@ -66,6 +74,8 @@ proxy-groups:
       - trojan
       - Vmess::ws+cdn
       - Vmess::ws+tls+gcdn
+      - Vmess::doprax+cfcdn
+      - Vmess::doprax+cfworker
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -77,6 +87,8 @@ proxy-groups:
       - trojan
       - Vmess::ws+cdn
       - Vmess::ws+tls+gcdn
+      - Vmess::doprax+cfcdn
+      - Vmess::doprax+cfworker
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -88,6 +100,8 @@ proxy-groups:
       - trojan
       - Vmess::ws+cdn
       - Vmess::ws+tls+gcdn
+      - Vmess::doprax+cfcdn
+      - Vmess::doprax+cfworker
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -116,6 +130,8 @@ proxy-groups:
       - trojan
       - Vmess::ws+cdn
       - Vmess::ws+tls+gcdn
+      - Vmess::doprax+cfcdn
+      - Vmess::doprax+cfworker
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
