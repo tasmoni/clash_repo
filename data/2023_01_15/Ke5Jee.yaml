@@ -13,12 +13,12 @@ mode: Rule
 log-level: info
 external-controller: 0.0.0.0:9090
 proxies:
-  - {"type":"vmess","name":"Vmess::ws+tls","ws-opts":{"path":"/prime","headers":{"host":"freedom.epix.site"}},"server":"alt.epix.site","port":"8443","uuid":"68e6b5d6-6cb3-4a31-fe1c-bcb450f96b07","alterId":"11","cipher":"auto","network":"ws","tls":true}
+  - {"name":"Vmess::ws+tls","type":"vmess","server":"cf.epix.ml","port":8443,"cipher":"auto","uuid":"68e6b5d6-6cb3-4a31-fe1c-bcb450f96b07","alterId":11,"tls":true,"skip-cert-verify":true,"servername":"freedom.epix.site","network":"ws","ws-opts":{"path":"/prime","headers":{"host":"freedom.epix.site"}}}
   - {"type":"vmess","name":"Vmess::ws+gcdn","ws-opts":{"path":"/1234","headers":{"host":"test.epix.site"}},"server":"gcdn.2.epix.site","port":"80","uuid":"051d7590-e9ed-4e89-ef64-4ef34878ebe5","alterId":"0","cipher":"auto","network":"ws"}
   - {"type":"vmess","name":"Vmess::tcp+http-masq","http-opts":{"path":["/"]},"server":"fl.epix.site","port":"20760","uuid":"e861f016-5cb4-4f9e-912b-1e67760ac33a","alterId":"0","cipher":"auto","network":"http"}
   - {"type":"trojan","name":"Trojan","server":"fl.epix.site","port":4443,"password":"gVI1gTDV60","udp":true,"skip-cert-verify":true,"network":"tcp"}
   - {"type":"vmess","name":"Vmess::ws+cdn","ws-opts":{"path":"/","headers":{"host":"cdn.epix.site"}},"server":"cdn.epix.site","port":"80","uuid":"08b05311-d7e8-4343-fcc5-e11914ce4495","alterId":"66","cipher":"auto","network":"ws"}
-  - {"type":"vmess","name":"Vmess::ws+tls+gcdn","ws-opts":{"path":"/24281","headers":{"host":"subnet.epix.site"}},"server":"gcdn.1.epix.site","port":"443","uuid":"2aedb8a1-b600-42a0-8149-a3186ee8f9e7","alterId":"0","cipher":"auto","network":"ws","tls":true}
+  - {"name":"Vmess::ws+tls+gcdn","type":"vmess","server":"gcdn.epix.ml","port":443,"cipher":"auto","uuid":"2aedb8a1-b600-42a0-8149-a3186ee8f9e7","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"subnet.epix.site","network":"ws","ws-opts":{"path":"/24281","headers":{"host":"subnet.epix.site"}}}
   - {"name":"Vmess::doprax+cfworker","type":"vmess","server":"cf.epix.ml","port":443,"cipher":"auto","uuid":"8a11784e-8c4f-495a-ab6d-79e29f6ce5d6","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"lb.schwifty.cf","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"lb.schwifty.cf"}}}
   - {"name":"Vmess::doprax+cfcdn","type":"vmess","server":"cf.epix.ml","port":443,"cipher":"auto","uuid":"8a11784e-8c4f-495a-ab6d-79e29f6ce5d6","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"doprax.epix.ml","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"doprax.epix.ml"}}}
   - {"name":"Vmess::uffizzi+cfworker","type":"vmess","server":"cf.epix.ml","port":443,"cipher":"auto","uuid":"6d2ab16e-e778-412a-a8a3-ae00df06480c","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"uffizzi.epixworker.workers.dev","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"uffizzi.epixworker.workers.dev"}}}
