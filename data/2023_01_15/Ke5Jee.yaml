@@ -21,8 +21,6 @@ proxies:
   - {"name":"Vmess::ws+tls+gcdn","type":"vmess","server":"gcdn.epix.ml","port":443,"cipher":"auto","uuid":"2aedb8a1-b600-42a0-8149-a3186ee8f9e7","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"subnet.epix.site","network":"ws","ws-opts":{"path":"/24281","headers":{"host":"subnet.epix.site"}}}
   - {"name":"Vmess::doprax+cfworker","type":"vmess","server":"cf.epix.ml","port":443,"cipher":"auto","uuid":"8a11784e-8c4f-495a-ab6d-79e29f6ce5d6","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"lb.schwifty.cf","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"lb.schwifty.cf"}}}
   - {"name":"Vmess::doprax+cfcdn","type":"vmess","server":"cf.epix.ml","port":443,"cipher":"auto","uuid":"8a11784e-8c4f-495a-ab6d-79e29f6ce5d6","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"doprax.epix.ml","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"doprax.epix.ml"}}}
-  - {"name":"Vmess::uffizzi+cfworker","type":"vmess","server":"cf.epix.ml","port":443,"cipher":"auto","uuid":"6d2ab16e-e778-412a-a8a3-ae00df06480c","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"uffizzi.epix.ml","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"uffizzi.epix.ml"}}}
-  - {"name":"Trojan::uffizzi+cfworker","type":"trojan","server":"cf.epix.ml","port":443,"udp":true,"password":"6d2ab16e-e778-412a-a8a3-ae00df06480c","sni":"uffizzi.epix.ml","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/trojan","headers":{"host":"uffizzi.epix.ml"}},"alpn":["http/1.1"]}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -37,8 +35,7 @@ proxy-groups:
       - Vmess::ws+tls+gcdn
       - Vmess::doprax+cfcdn
       - Vmess::doprax+cfworker
-      - Vmess::uffizzi+cfworker
-      - Trojan::uffizzi+cfworker
+
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -53,8 +50,7 @@ proxy-groups:
       - Vmess::ws+tls+gcdn
       - Vmess::doprax+cfcdn
       - Vmess::doprax+cfworker
-      - Vmess::uffizzi+cfworker
-      - Trojan::uffizzi+cfworker
+
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -69,8 +65,7 @@ proxy-groups:
       - Vmess::ws+tls+gcdn
       - Vmess::doprax+cfcdn
       - Vmess::doprax+cfworker
-      - Vmess::uffizzi+cfworker
-      - Trojan::uffizzi+cfworker
+
   - name: 📲 电报信息
     type: select
     proxies:
@@ -84,8 +79,7 @@ proxy-groups:
       - Vmess::ws+tls+gcdn
       - Vmess::doprax+cfcdn
       - Vmess::doprax+cfworker
-      - Vmess::uffizzi+cfworker
-      - Trojan::uffizzi+cfworker
+
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -99,8 +93,7 @@ proxy-groups:
       - Vmess::ws+tls+gcdn
       - Vmess::doprax+cfcdn
       - Vmess::doprax+cfworker
-      - Vmess::uffizzi+cfworker
-      - Trojan::uffizzi+cfworker
+
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -114,8 +107,7 @@ proxy-groups:
       - Vmess::ws+tls+gcdn
       - Vmess::doprax+cfcdn
       - Vmess::doprax+cfworker
-      - Vmess::uffizzi+cfworker
-      - Trojan::uffizzi+cfworker
+
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -146,8 +138,7 @@ proxy-groups:
       - Vmess::ws+tls+gcdn
       - Vmess::doprax+cfcdn
       - Vmess::doprax+cfworker
-      - Vmess::uffizzi+cfworker
-      - Trojan::uffizzi+cfworker
+
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
