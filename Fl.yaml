@@ -148,7 +148,13 @@ proxy-groups:
       - '🇫🇮 gcdn #3'
       - '🇩🇪 cfcdn #1'
       - '🇩🇪 cfcdn #2'
-
+rule-providers:
+  iran:
+    type: http
+    behavior: classical
+    url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules.yaml"
+    path: ./ruleset/iran.yaml
+    interval: 432000
 rules:
 # 本地/局域网地址
 # 参考：https://en.wikipedia.org/wiki/Reserved_IP_addresses
@@ -171,6 +177,7 @@ rules:
   - IP-CIDR6,fc00::/7,🎯 全球直连,no-resolve
   - IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve
   - IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve
+  - RULE-SET,iran,DIRECT
   - DOMAIN,instant.arubanetworks.com,🎯 全球直连
   - DOMAIN,setmeup.arubanetworks.com,🎯 全球直连
   - DOMAIN,router.asus.com,🎯 全球直连
